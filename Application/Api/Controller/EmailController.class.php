@@ -7,7 +7,7 @@ class EmailController extends CommonController
     public function send($smtpHost, $smtpPort, $smtpEmail, $smtpName, $smtpUser, $smtpPass, $receiveEmail, $subject, $content)
     {
         Vendor('PHPMailer.PHPMailerAutoload');
-        $mail = new PHPMailer();
+        $mail = new \PHPMailer();
         $mail->SMTPDebug = 0;                               // Enable verbose debug output
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = $smtpHost;  // Specify main and backup SMTP servers
