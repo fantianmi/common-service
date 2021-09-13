@@ -26,10 +26,6 @@ class EmailController extends CommonController
         $mail->Subject = $subject;
         $mail->Body = $content;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-        if ($mail->send()) {
-            $this->jsuccess();
-        } else {
-            $this->jerror($mail->ErrorInfo);
-        }
+        return $mail->Send() ? true : $mail->ErrorInfo;
     }
 }
