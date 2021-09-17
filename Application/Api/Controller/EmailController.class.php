@@ -15,7 +15,7 @@ class EmailController extends CommonController
         $mail->CharSet = 'UTF-8';
         $mail->Username = $smtpUser;                 // SMTP username
         $mail->Password = $smtpPass;                           // SMTP password
-        if ($smtpHost == 'smtp.qq.com' || $smtpHost == 465) {
+        if ($smtpHost == 'smtp.qq.com' || $smtpPort == 465) {
             $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
         }
         $mail->Port = $smtpPort;                                    // TCP port to connect to
